@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باشگاه موی تای مقدم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#dc2626',
+                        dark: '#1a1a1a',
+                        darker: '#0d0d0d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tahoma&display=swap');
+        
+        body {
+            font-family: 'Tahoma', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .hero-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(pic/3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* زمانی که عرض صفحه بیشتر از 1024 پیکسل شد */
+@media (min-width: 1024px) {
+    .hero-bg {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(pic/merdad\ hed.jpg);
+    }
+}     
+        .trainer-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pic/bazi.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .dark .dark\:bg-darker {
+            background-color: #0d0d0d;
+        }
+        
+        .dark .dark\:text-gray-200 {
+            color: #e5e7eb;
+        }
+        
+        .dark .dark\:border-gray-700 {
+            border-color: #374151;
+        }
+    </style>
+    <!DOCTYPE html>
+    <html lang="fa" dir="rtl">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <style>
+        body {
+          margin: 0;
+          padding-bottom: 80px;
+          font-family: 'Vazirmatn', sans-serif;
+          background: linear-gradient(to top, #eee, #fff);
+        }
+    
+        .navbar {
+          display: none;
+        }
+    
+        @media (max-width: 768px) {
+          .navbar {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(117, 117, 117, 0.7);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            box-shadow: 0 -4px 10px rgba(197, 2, 2, 0.05);
+            z-index: 1000;
+            transition: transform 0.4s ease, opacity 0.4s ease, background 0.4s;
+            transform: translateY(0);
+            opacity: 1;
+          }
+          .navbar.hidden {
+            transform: translateY(100%);
+            opacity: 0;
+            pointer-events: none;
+          }
+        }
+    
+        .nav-item {
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-decoration: none;
+          color: #000000;
+          font-size: 12px;
+          transition: all 0.3s ease;
+          transform: scale(1);
+        }
+    
+        .nav-item i {
+          font-size: 22px;
+          margin-bottom: 4px;
+          transition: color 0.3s ease, transform 0.4s ease;
+        }
+    
+        /* آیکون خانه - کوچک‌تر و با حاشیه */
+        .nav-item.home {
+          transform: scale(1);
+          font-size: 24px;
+          padding: 4px;
+          
+         
+        }
+    
+        .nav-item.home i {
+          margin: 0;
+        }
+    
+        .nav-item.home:hover {
+          transform: scale(1.2);
+          
+        }
+    
+        .nav-item.active {
+          color: #f80000;
+        }
+    
+        .nav-item:active {
+          transform: scale(0.95);
+        }
+    
+        /* Ripple Effect */
+        .ripple {
+          position: absolute;
+          border-radius: 50%;
+          transform: scale(0);
+          animation: ripple 0.6s linear;
+          background-color: rgba(0, 0, 0, 0.2);
+          pointer-events: none;
+        }
+        @keyframes ripple {
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+    
+        /* Bounce انیمیشن */
+        .bounce {
+          animation: bounce 0.6s ease forwards;
+        }
+        @keyframes bounce {
+          0% { transform: translateY(20px) scale(0.9); opacity: 0; }
+          50% { transform: translateY(-5px) scale(1.05); opacity: 1; }
+          100% { transform: translateY(0) scale(1); }
+        }
+    
+        /* Shake انیمیشن */
+        .shake {
+          animation: shake 0.4s ease;
+        }
+        @keyframes shake {
+          0% { transform: rotate(0deg); }
+          25% { transform: rotate(10deg); }
+          50% { transform: rotate(-10deg); }
+          75% { transform: rotate(5deg); }
+          100% { transform: rotate(0deg); }
+        }
+      </style>
+    </head>
+    <body>
+    
+   
+
+    <!-- اسکریپت ها -->
+    <script>
+        function createRipple(event) {
+          const button = event.currentTarget;
+          const circle = document.createElement('span');
+          const diameter = Math.max(button.clientWidth, button.clientHeight);
+          const radius = diameter / 2;
+        
+          // استفاده صحیح از template literals
+          circle.style.width = circle.style.height = `${diameter}px`;
+          circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+          circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+          circle.classList.add('ripple');
+        
+          // حذف هر ripple قبلی که هنوز درون دکمه است
+          const ripple = button.getElementsByClassName('ripple')[0];
+          if (ripple) {
+            ripple.remove();
+          }
+          
+          // اضافه کردن ripple جدید به دکمه
+          button.appendChild(circle);
+        }
+          
+        function handleIconClick(event) {
+          createRipple(event);
+          const icon = event.currentTarget.querySelector('i');
+          icon.classList.add('shake');
+          setTimeout(() => {
+            icon.classList.remove('shake');
+          }, 400);
+        }
+          
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+          
+        window.addEventListener('scroll', function() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          if (scrollTop > lastScrollTop) {
+            navbar.classList.add('hidden');
+          } else {
+            navbar.classList.remove('hidden');
+            const icons = navbar.querySelectorAll('i');
+            icons.forEach((icon, index) => {
+              setTimeout(() => {
+                icon.classList.add('bounce');
+                setTimeout(() => {
+                  icon.classList.remove('bounce');
+                }, 600);
+              }, index * 100);
+            });
+          }
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+        </script>
+  
+  </body>
+  </html>
+</head>
+<body class="bg-gray-100 dark:bg-dark text-gray-800 dark:text-gray-200">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-darker shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-fist-raised text-primary text-2xl mr-2"></i>
+                <span class="text-2xl font-bold">ابراهیم <span class="text-red-500">مقدم</span></span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-6 space-x-reverse">
+                <a href="#home" class="hover:text-primary transition">خانه</a>
+                <a href="#about" class="hover:text-primary transition">درباره ما</a>
+                <a href="#trainer" class="hover:text-primary transition">مربی</a>
+                <a href="#classes" class="hover:text-primary transition">کلاس‌ها</a>
+                <a href="#gallery" class="hover:text-primary transition">گالری</a>
+                <a href="#contact" class="hover:text-primary transition">تماس</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4 space-x-reverse">
+                <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                
+                <button class="md:hidden" id="mobileMenuButton">
+                </button>
+            </div>
+        </div>
+            
+    <!-- نوار ناوبری -->
+    <div class="navbar" id="navbar">
+        <a href="#about" class="nav-item" onclick="handleIconClick(event)">
+          <i class="fas fa-info-circle"></i>
+          درباره ما
+        </a>
+        
+        <a href="#classes" class="nav-item" onclick="handleIconClick(event)">
+          <i class="fas fa-book-open"></i>
+          کلاس ها
+        </a>
+        
+        <!-- خانه در وسط و متفاوت -->
+        <a href="#home" class="nav-item home active" onclick="handleIconClick(event)">
+          <i class="fas fa-home"></i>
+          خانه
+        </a>
+      
+        <a href="#contact" class="nav-item" onclick="handleIconClick(event)">
+          <i class="fas fa-phone"></i>
+          تماس
+          
+        </a >
+        
+        <!-- دکمه مربی -->
+        <a href="#trainer" class="nav-item" onclick="handleIconClick(event)">
+          <i class="fas fa-chalkboard-teacher"></i>
+          مربی
+        </a>
+      </div>
+      
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">استاد ابراهیم مقدم</h1>
+            <p class="text-xl md:text-2xl mb-8">تمرینات حرفه‌ای موی تای زیر نظر مربی بین‌المللی</p>
+            <div class="flex justify-center space-x-4 space-x-reverse md:flex md:space-x-4">
+                <a href="#classes" class="bg-primary hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold transition md:block hidden">ثبت نام در کلاس‌ها</a>
+                <a href="#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white px-6 py-3 rounded-lg font-bold transition md:block hidden">تماس با ما</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainer Section -->
+    <section id="trainer" class="trainer-bg py-16  text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12"></h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <img src="pic/ostad.jpg" 
+                             alt="ابراهیم مقدم" 
+                             class="w-64 h-64 object-cover rounded-full border-4 border-primary shadow-lg">
+                        <div class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full font-bold">
+                          رزومه استاد ابراهیم مقدم
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-4">ابراهیم مقدم</h3>
+                    <p class="text-lg mb-4 leading-relaxed">
+                      مربی بین‌المللی موی‌تای دارای مدرک رسمی مربیگری از معتبرترین نهادهای بین‌المللی
+
+                          مربی تیم ملی موی‌تای جمهوری اسلامی ایران با سابقه‌ای درخشان در رقابت‌های ملی و بین‌المللی      
+
+                        مربی برتر استان البرز با سابقه ۶ دوره مربیگری رسمی و نقش کلیدی در ارتقای سطح فنی استان  
+                    </p>
+                    <p class="text-lg mb-4 leading-relaxed">
+                      قهرمان چندین دوره مسابقات در سطوح کشوری، آسیایی، بین‌المللی و حرفه‌ای
+
+                      بنیان‌گذار موی‌تای در شهرستان‌های ساوجبلاغ و نظرآباد و مروج این هنر رزمی در منطقه
+                      
+                      پرورش‌دهنده قهرمانان ملی و استعدادهای درخشان که به تیم ملی راه یافته‌اند
+                      
+                      مسئول انجمن موی‌تای ساوجبلاغ و فعال در توسعه زیرساخت‌های ورزش‌های رزمی در شهرستان
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="bg-primary bg-opacity-20 text-white px-3 py-1 rounded-full">قهرمان آسیا </span>
+                        <span class="bg-primary bg-opacity-20 text-white px-3 py-1 rounded-full">مربی بین‌المللی</span>
+                        <span class="bg-primary bg-opacity-20 text-white px-3 py-1 rounded-full">داور رسمی</span>
+                        <span class="bg-primary bg-opacity-20 text-white px-3 py-1 rounded-full">مربی تیم ملی</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- About Section -->
+<section id="about" class="py-16 bg-white dark:bg-darker">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-primary">درباره باشگاه</h2>
+
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-8 md:mb-0 md:pl-8">
+        <h3 class="text-2xl font-bold mb-4">باشگاه موی تای مقدم</h3>
+        <p class="text-lg mb-4 leading-relaxed">
+          باشگاه موی تای مقدم با بیش از 15 سال سابقه درخشان در زمینه آموزش هنرهای رزمی تایلندی، یکی از معتبرترین مراکز آموزش موی تای در کشور می‌باشد. این باشگاه با بهره‌گیری از مربیان مجرب و امکانات استاندارد، محیطی ایده‌آل برای علاقه‌مندان به این ورزش اصیل فراهم کرده است.
+        </p>
+        <p class="text-lg leading-relaxed">
+          ما در باشگاه مقدم به پرورش ورزشکاران حرفه‌ای و قهرمانان ملی و بین‌المللی افتخار می‌کنیم. سیستم آموزشی ما ترکیبی از تکنیک‌های سنتی موی تای و روش‌های مدرن تمرینی است که به هر ورزشکار کمک می‌کند به بالاترین سطح توانایی خود دست یابد.
+        </p>
+      </div>
+
+      <div class="md:w-1/2 flex justify-center">
+        <img src="pic/tim.jpg" 
+             alt="Muay Thai Training" 
+             class="w-3/4 max-w-md rounded-lg shadow-xl">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Classes Section -->
+  <section id="classes" class="py-16 bg-gray-100 dark:bg-dark">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-primary">کلاس‌های آموزشی</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Class 1 -->
+            <div class="bg-white dark:bg-darker rounded-lg shadow-lg overflow-hidden transition hover:shadow-xl">
+                <img src="pic/clas kh.jpg" 
+                     alt="مبتدی" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">کلاس عمومی </h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        مناسب برای افرادی که تازه با موی تای آشنا شده‌اند. آموزش اصول پایه و تکنیک‌های ابتدایی.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-primary">هفته‌ای 3 جلسه</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full">800,000 تومان</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Class 2 -->
+            <div class="bg-white dark:bg-darker rounded-lg shadow-lg overflow-hidden transition hover:shadow-xl">
+                <img src="pic/clas2.jpg" 
+                     alt="پیشرفته" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">کلاس  نیمه خصوصی</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        آموزش تکنیک‌های حرفه‌ای و ترکیبی موی تای برای ورزشکاران با سابقه.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-primary">هفته‌ای 3 جلسه</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full">1,500,000 تومان</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Class 3 -->
+            <div class="bg-white dark:bg-darker rounded-lg shadow-lg overflow-hidden transition hover:shadow-xl">
+                <img src="pic/clas3.jpg" 
+                     alt="خصوصی" 
+                     class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">کلاس خصوصی</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        تمرینات اختصاصی با مربی ارشد باشگاه برای دستیابی به اهداف خاص در کوتاه‌ترین زمان.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-primary">برنامه اختصاصی</span>
+                        <span class="bg-primary text-white px-3 py-1 rounded-full">3,000,000 تومان</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="#contact" class="bg-primary hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold inline-block transition">ثبت نام و مشاوره رایگان</a>
+        </div>
+    </div>
+</section>
+
+ <!-- Gallery Section -->
+<section id="gallery" class="py-16 bg-white dark:bg-darker">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-primary">گالری تصاویر</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-grid">
+      <!-- تصاویر نمونه با کلاس انیمیشن -->
+     
+      <img src="pic/4.jpg"
+        alt="  اساتید موی تای"
+        class="gallery-img w-full h-48 object-cover rounded shadow-md cursor-pointer opacity-0 translate-y-8 transition duration-700 ease-in-out" />
+      <img src="pic/kami.jpg" alt="مسابقه موی تای"
+        class="gallery-img w-full h-48 object-cover rounded shadow-md cursor-pointer opacity-0 translate-y-8 transition duration-700 ease-in-out" />
+      <img src="pic/alire.jpg" alt="مسابقه موی تای"
+        class="gallery-img w-full h-48 object-cover rounded shadow-md cursor-pointer opacity-0 translate-y-8 transition duration-700 ease-in-out" />
+      <img src="pic/mehrdad.jpg" alt="مهرداد حیدری"
+        class="gallery-img w-full h-48 object-cover rounded shadow-md cursor-pointer opacity-0 translate-y-8 transition duration-700 ease-in-out" />
+      <img src="pic/meh2.jpg" alt="مهرداد حیدری"
+        class="gallery-img w-full h-48 object-cover rounded shadow-md cursor-pointer opacity-0 translate-y-8 transition duration-700 ease-in-out" />
+      <img src="pic/yashar.jpg" alt=" یاشار یزدانی"
+        class="gallery-img w-full h-48 object-cover rounded shadow-md cursor-pointer opacity-0 translate-y-8 transition duration-700 ease-in-out" />
+        <img src="pic/aks cami.jpg" alt=" کامیار آسیایی"
+        class="gallery-img w-full h-48 object-cover rounded shadow-md cursor-pointer opacity-0 translate-y-8 transition duration-700 ease-in-out" />
+        
+    </div>
+  </div>
+</section>
+<!-- Video Section -->
+<section id="videos" class="py-16 bg-white dark:bg-darker">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-primary">شاگردان </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Video Box 1 -->
+      <div class="relative w-full h-0 pb-[56.25%] rounded overflow-hidden shadow-md transition duration-700 ease-in-out opacity-0 translate-y-8 video-box">
+        <video class="absolute top-0 left-0 w-full h-full object-contain" controls>
+          <source src="pic/rws.mp4" type="video/mp4">
+          مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+        </video>
+      </div>
+
+      <!-- Video Box 2 -->
+      <div class="relative w-full h-0 pb-[56.25%] rounded overflow-hidden shadow-md transition duration-700 ease-in-out opacity-0 translate-y-8 video-box">
+        <video class="absolute top-0 left-0 w-full h-full object-contain" controls>
+          <source src="pic/cami.mp4" type="video/mp4">
+          مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+        </video>
+      </div>
+
+      <!-- Video Box 3 -->
+      <div class="relative w-full h-0 pb-[56.25%] rounded overflow-hidden shadow-md transition duration-700 ease-in-out opacity-0 translate-y-8 video-box">
+        <video class="absolute top-0 left-0 w-full h-full object-contain" controls>
+          <source src="pic/saber.mp4" type="video/mp4">
+          مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+    
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+  <button onclick="closeLightbox()" class="absolute top-4 right-6 text-white text-3xl font-bold z-50">&times;</button>
+  <button onclick="prevImage()" class="absolute left-4 text-white text-4xl font-bold z-50">&#10094;</button>
+  <button onclick="nextImage()" class="absolute right-4 text-white text-4xl font-bold z-50">&#10095;</button>
+
+  <div class="relative">
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] rounded shadow-lg">
+    <p id="lightbox-caption" class="text-center text-white mt-4"></p>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+
+  const galleryImages = document.querySelectorAll('.gallery-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  let currentIndex = 0;
+  const images = Array.from(galleryImages).map(img => ({
+    src: img.src,
+    alt: img.alt
+  }));
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.remove('hidden');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+  }
+
+  function updateLightbox() {
+    lightboxImg.src = images[currentIndex].src;
+    lightboxCaption.textContent = images[currentIndex].alt;
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightbox();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightbox();
+  }
+
+  // Keyboard Navigation
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('hidden')) return;
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  // Intersection Observer for animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', 'translate-y-8');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  galleryImages.forEach(img => {
+    observer.observe(img);
+    document.querySelectorAll('.video-box').forEach(video => observer.observe(video));
+  });
+</script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-100 dark:bg-dark">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">تماس با ما</h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-4">اطلاعات تماس</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary text-xl mt-1 ml-2"></i>
+                            <div>
+                                <h4 class="font-bold">آدرس باشگاه</h4>
+                                <p>هشتگرد,خیابان اصلی ,200 متر قبل راهنمایی رانندگی</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-primary text-xl mt-1 ml-2"></i>
+                            <div>
+                                <h4 class="font-bold">تلفن تماس</h4>
+                              
+                                <p>0935-2648032</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-primary text-xl mt-1 ml-2"></i>
+                            <div>
+                                <h4 class="font-bold">ایمیل</h4>
+                                <p>info@moghadam-muaythai.ir</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-primary text-xl mt-1 ml-2"></i>
+                            <div>
+                                <h4 class="font-bold">ساعات کاری</h4>
+                                <p>شنبه تا چهارشنبه: ۸ صبح تا ۱۰ شب</p>
+                                <p>پنجشنبه: ۸ صبح تا ۸ شب</p>
+                                <p>جمعه: تعطیل</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">ما را در شبکه‌های اجتماعی دنبال کنید</h4>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="bg-gray-200 dark:bg-gray-700 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://t.me/Ebrahimmoghadam8032" class="bg-gray-200 dark:bg-gray-700 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 dark:bg-gray-700 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="bg-gray-200 dark:bg-gray-700 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+               
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-fist-raised text-primary text-2xl mr-2"></i>
+                        <h2 class="text-xl font-bold text-primary">باشگاه موی تای مقدم</h2>
+                    </div>
+                    <p class="mt-2 text-gray-400">تمرینات حرفه‌ای موی تای زیر نظر مربی بین‌المللی</p>
+                </div>
+                
+                <div class="flex space-x-6 space-x-reverse">
+                    <a href="#" class="hover:text-primary transition">قوانین و مقررات</a>
+                    <a href="#" class="hover:text-primary transition">سوالات متداول</a>
+                    <a href="#" class="hover:text-primary transition">حریم خصوصی</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>کلیه حقوق این وبسایت متعلق به باشگاه موی تای مقدم می‌باشد. © ۱۴۰۲</p>
+            </div>
+        </div>
+        
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            
+            // Save preference to localStorage
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+        
+        // Check for saved preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            html.classList.add('dark');
+        }
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+       
+    
+  </a>
+</body>
+</html>
